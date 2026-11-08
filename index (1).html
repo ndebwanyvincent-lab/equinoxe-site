@@ -1,0 +1,819 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Équinoxe Services</title>
+<meta name="description" content="ÉQUINOXE EVENTS · Invitations digitales, invitations en dur, chevalets de table et couverture photo. L'art de créer des souvenirs.">
+<meta name="theme-color" content="#111014">
+<meta property="og:title" content="Équinoxe Services">
+<meta property="og:description" content="Découvrez nos modèles d'invitations et nos services. L'art de créer des souvenirs.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,600&family=Roboto:wght@400;500;700&display=swap">
+<style>
+:root{
+  --band:#111014; --card:#1d1c21; --card2:#25242a; --line:#2c2b31; --ink:#f3f1f5; --muted:#a9a6ae;
+  --gold:#c9a24a; --gold-soft:#e8d39b; --danger:#d0423a; --ok:#3fa36b;
+  --display:"Cormorant Garamond",Georgia,serif; --body:Roboto,system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--band);color:var(--ink);font-family:var(--body);font-size:15px;-webkit-tap-highlight-color:transparent}
+button{font:inherit;cursor:pointer;color:inherit;background:none;border:0;padding:0}
+input,textarea,select{font:inherit;color:var(--ink)}
+button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+svg{display:block}
+[hidden]{display:none!important}
+.wrap{max-width:640px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.logo{font-family:var(--display);font-style:italic;font-weight:600;font-size:26px;color:#fff;letter-spacing:.5px;line-height:1;text-decoration:none}
+.logo span{color:var(--gold)}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;height:42px;padding:0 16px;border-radius:10px;font-size:14.5px;font-weight:500;text-decoration:none}
+.btn.out{border:1.5px solid var(--gold);color:var(--gold)}
+.btn.full{background:var(--gold);color:#16151a}
+.btn.ghost{border:1px solid #3a3840;color:#d9d6de}
+.btn.danger{background:var(--danger);color:#fff}
+.btn:disabled{opacity:.5;cursor:default}
+.orb{width:26px;height:26px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff3cf,var(--gold) 55%,#7a5a1c);flex:none}
+@media (prefers-reduced-motion:no-preference){.pulse{animation:pulse 2.2s ease-in-out infinite}@keyframes pulse{50%{box-shadow:0 0 0 7px rgba(201,162,74,.22)}}}
+
+/* En-tête */
+header{position:sticky;top:0;z-index:5;background:var(--band);padding-top:env(safe-area-inset-top,0px)}
+.hd{display:flex;align-items:center;justify-content:space-between;gap:8px;padding-block:12px}
+.burger{width:40px;height:40px;display:grid;place-items:center;color:#fff;flex:none}
+.grace{display:flex;align-items:center;gap:7px;padding:4px 11px 4px 4px;border-radius:999px;background:var(--card);border:1px solid var(--gold);color:var(--ink);min-width:0}
+.gtxt{display:flex;flex-direction:column;line-height:1.1;text-align:left;min-width:0}.gtxt b{font-size:12px;font-weight:500;white-space:nowrap}.gtxt small{font-size:10px;color:var(--muted)}
+.tabs{display:flex;gap:6px;overflow-x:auto;padding-bottom:10px;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{white-space:nowrap;padding:6px 12px;border-radius:999px;border:1px solid #3a3840;color:#d9d6de;font-size:12.5px}
+.tab[aria-selected="true"]{background:var(--gold);border-color:var(--gold);color:#16151a;font-weight:500}
+
+/* Carte */
+main{padding-bottom:32px}
+.card{background:var(--card);border-radius:18px;padding:16px;display:flex;flex-direction:column;gap:12px}
+h1{font-size:17px;line-height:1.35;font-weight:500;margin:0;text-wrap:balance}
+.car{position:relative;width:70%;max-width:280px;margin-inline:auto;display:flex;flex-direction:column;gap:10px}
+.track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;border-radius:16px}
+.track::-webkit-scrollbar{display:none}
+.slide{flex:0 0 100%;scroll-snap-align:center;position:relative;aspect-ratio:4/5;background:#0d0c10}
+.slide img,.slide video{width:100%;height:100%;object-fit:cover;display:block}
+.slide.fit img{object-fit:contain}
+.ph{width:100%;height:100%;display:grid;place-items:center;padding:20px;text-align:center;font-family:var(--display);font-style:italic;font-size:26px;color:var(--gold);background:radial-gradient(circle at 50% 30%,#2a261d,#121115)}
+.pill{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:#fff;color:#16151a;border-radius:999px;padding:8px 16px;display:flex;align-items:center;gap:7px;font-size:14px;font-weight:500;text-decoration:none;box-shadow:0 3px 12px rgba(0,0,0,.25)}
+.arr{position:absolute;top:calc(50% - 26px);width:30px;height:30px;border-radius:50%;background:var(--gold);color:#16151a;display:grid;place-items:center;box-shadow:0 3px 10px rgba(0,0,0,.3)}
+.arr.next{right:-15px}.arr.prev{left:-15px}
+@media (prefers-reduced-motion:no-preference){.arr.next{animation:nudge 1.4s ease-in-out infinite}@keyframes nudge{50%{transform:translateX(4px)}}}
+.cap{display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:13px}
+.cap b{font-weight:500}
+.dots{display:flex;gap:6px}.dots i{width:7px;height:7px;border-radius:50%;background:var(--line)}.dots i.on{background:var(--gold);width:18px;border-radius:4px}
+.list{display:flex;flex-direction:column;border-bottom:1px solid var(--line);margin-inline:-6px}
+.item{display:flex;align-items:center;gap:10px;padding:7px 8px;border-radius:10px}
+.item:nth-child(odd){background:var(--card2)}
+.thumb{width:36px;height:36px;border-radius:8px;object-fit:cover;flex:none;background:#2a261d;border:1px solid var(--line)}
+.name{flex:1;min-width:0;font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ico{width:32px;height:32px;display:grid;place-items:center;color:var(--muted);flex:none}
+.ico.go{color:var(--gold)}
+.btns{display:flex;flex-direction:column;gap:8px}
+.contact{color:#cfccd4;font-size:12px;text-align:center;padding-top:16px;display:flex;flex-direction:column;align-items:center;gap:8px}
+.contact b{color:#fff;font-size:15px;font-weight:500;user-select:all}
+.copy{border:1px solid #3a3840;border-radius:999px;padding:4px 12px;font-size:12px;color:#d9d6de}
+.loading{padding:40px 0;text-align:center;color:var(--muted)}
+
+/* Plein écran (menu, aperçu) */
+.screen{position:fixed;inset:0;z-index:30;background:var(--band);overflow-y:auto;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+.menulist{display:flex;flex-direction:column;padding-block:8px}
+.mi{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:15px 4px;border-bottom:1px solid var(--line);font-size:16px;text-align:left;width:100%}
+.mi.on{color:var(--gold)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding-block:16px}
+.tile{display:block;border-radius:14px;overflow:hidden;position:relative;aspect-ratio:1;background:#222;text-decoration:none;color:#fff}
+.tile img{width:100%;height:100%;object-fit:cover}
+.tile span{position:absolute;left:0;right:0;bottom:0;padding:20px 10px 8px;font-size:13px;font-weight:500;background:linear-gradient(transparent,rgba(0,0,0,.8));text-align:left}
+
+/* Appel Grâce */
+.call{position:fixed;inset:0;z-index:40;background:radial-gradient(circle at 50% 32%,#2b2416 0%,#121115 55%,#0b0a0d 100%);display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:calc(48px + env(safe-area-inset-top,0px)) 24px calc(36px + env(safe-area-inset-bottom,0px));text-align:center}
+.call-top{display:flex;flex-direction:column;align-items:center;gap:6px}
+.call-top small{color:var(--muted);font-size:13px;letter-spacing:.06em;text-transform:uppercase}
+.call-top h2{margin:0;font-family:var(--display);font-style:italic;font-size:40px;font-weight:600;color:#fff}
+.call-top p{margin:0;color:var(--gold-soft);font-size:15px}
+.bigorb{position:relative;width:170px;height:170px;display:grid;place-items:center}
+.bigorb .core{width:130px;height:130px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff3cf,var(--gold) 55%,#6e5018);box-shadow:0 0 60px rgba(201,162,74,.35);transition:transform .25s}
+.bigorb .ring{position:absolute;inset:0;border-radius:50%;border:2px solid rgba(201,162,74,.35)}
+@media (prefers-reduced-motion:no-preference){
+  .bigorb .ring{animation:ring 2.4s ease-out infinite}.bigorb .ring.r2{animation-delay:1.2s}
+  @keyframes ring{from{transform:scale(.75);opacity:1}to{transform:scale(1.35);opacity:0}}
+  .speaking .core{animation:talk .5s ease-in-out infinite alternate}@keyframes talk{to{transform:scale(1.08)}}
+}
+.call-actions{display:flex;flex-direction:column;align-items:center;gap:14px;width:100%;max-width:320px}
+.answer{width:100%;height:56px;border-radius:999px;background:var(--gold);color:#16151a;font-size:17px;font-weight:500;display:flex;align-items:center;justify-content:center;gap:10px}
+.later{color:var(--muted);font-size:14px;padding:6px}
+.incall-btns{display:flex;justify-content:center;gap:28px}
+.cbtn{display:flex;flex-direction:column;align-items:center;gap:6px;font-size:12px;color:var(--muted)}
+.cbtn i{width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:#2a2930;color:#fff}
+.cbtn.hang i{background:var(--danger)}
+.cbtn.on i{background:#fff;color:#16151a}
+.timer{font-variant-numeric:tabular-nums;color:var(--muted);font-size:14px}
+.err{color:#f0b3ae;font-size:14px;line-height:1.5;max-width:320px}
+.bubble{position:fixed;z-index:35;right:calc(16px + env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));display:flex;align-items:center;gap:8px;padding:6px 14px 6px 6px;border-radius:999px;background:var(--card);border:1px solid var(--gold);box-shadow:0 8px 24px rgba(0,0,0,.45)}
+.bubble .orb{width:34px;height:34px}
+.bubble span{font-size:13px}
+
+/* Admin */
+.panel{background:var(--card);border-radius:14px;padding:14px;display:flex;flex-direction:column;gap:12px}
+.field{display:flex;flex-direction:column;gap:6px;font-size:13px;color:var(--muted)}
+.field input,.field textarea{background:#141317;border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:15px;width:100%}
+.row{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.row>*{min-width:0}
+.sec{display:flex;align-items:center;gap:8px;padding:10px;border-radius:12px;background:var(--card2)}
+.sec .nm{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
+.sec .nm b{font-weight:500;font-size:15px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.sec .nm small{color:var(--muted);font-size:12px}
+.mini{width:34px;height:34px;border-radius:9px;display:grid;place-items:center;background:#141317;border:1px solid var(--line);color:#d9d6de;flex:none}
+.mini.del{color:#f0b3ae}
+.tag{font-size:11px;padding:2px 8px;border-radius:999px;background:#3a3840;color:#d9d6de}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:#fff;color:#16151a;padding:10px 16px;border-radius:999px;font-size:14px;z-index:60;box-shadow:0 6px 20px rgba(0,0,0,.4)}
+.bar{height:6px;border-radius:3px;background:#141317;overflow:hidden}.bar i{display:block;height:100%;background:var(--gold);width:0;transition:width .2s}
+.confirm{background:#2a1a19;border:1px solid #5a2b28;border-radius:12px;padding:12px;display:flex;flex-direction:column;gap:10px;font-size:14px}
+.prev{width:100%;max-width:220px;aspect-ratio:4/5;border-radius:12px;object-fit:cover;background:#0d0c10}
+.switch{display:flex;align-items:center;gap:10px;font-size:14px}
+.switch input{width:20px;height:20px;accent-color:var(--gold)}
+.hint{font-size:12px;color:var(--muted);line-height:1.5;margin:0}
+
+</style>
+</head>
+<body>
+<div id="vitrineRoot">
+<header><div class="wrap">
+  <div class="hd">
+    <a class="logo" href="./">équinoxe<span>.</span></a>
+    <button class="grace" id="graceBtn" aria-label="Parler avec Grâce, notre assistante"><span class="orb pulse"></span><span class="gtxt"><b>Parler avec Grâce</b><small>Assistante</small></span></button>
+    <button class="burger" aria-label="Menu" id="burger"><svg width="24" height="18" viewBox="0 0 30 22" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M2 2h26M8 11h20M2 20h26"/></svg></button>
+  </div>
+  <div class="tabs" role="tablist" id="tabs"></div>
+</div></header>
+
+<main><div class="wrap">
+  <section class="card" id="card"><div class="loading">Chargement des modèles…</div></section>
+  <div class="contact"><span id="sloganLine">ÉQUINOXE EVENTS · L'art de créer des souvenirs.</span><b id="num">+243 836 963 894</b><button class="copy" id="copyBtn">Copier le numéro</button></div>
+</div></main>
+
+<!-- Menu -->
+<div class="screen" id="menu" hidden><div class="wrap">
+  <div class="hd"><span class="logo">équinoxe<span>.</span></span><button class="burger" aria-label="Fermer le menu" id="menuClose"><svg width="20" height="20" viewBox="0 0 20 20" stroke="#fff" stroke-width="2.2" stroke-linecap="round"><path d="M4 4l12 12M16 4L4 16"/></svg></button></div>
+  <nav class="menulist" id="menulist"></nav>
+  <div class="btns" style="margin-top:14px">
+    <button class="btn out" id="menuGrace">Parler avec Grâce, notre assistante</button>
+    <a class="btn full" id="menuWa" target="_blank" rel="noopener">Nous écrire sur WhatsApp</a>
+  </div>
+</div></div>
+
+<!-- Aperçu en grille -->
+<div class="screen" id="gridView" hidden><div class="wrap">
+  <div class="hd"><b id="gTitle" style="font-weight:500"></b><button class="burger" aria-label="Fermer l'aperçu" id="gridClose"><svg width="20" height="20" viewBox="0 0 20 20" stroke="#fff" stroke-width="2.2" stroke-linecap="round"><path d="M4 4l12 12M16 4L4 16"/></svg></button></div>
+  <div class="grid" id="grid"></div>
+</div></div>
+
+<!-- Appel de Grâce -->
+<div class="call" id="call" hidden role="dialog" aria-label="Appel de Grâce">
+  <div class="call-top"><small id="callKicker">Appel entrant</small><h2>Grâce</h2><p id="callStatus">Équinoxe Events vous appelle…</p><span class="timer" id="timer" hidden>00:00</span></div>
+  <div class="bigorb" id="bigorb"><i class="ring"></i><i class="ring r2"></i><span class="core"></span></div>
+  <div class="call-actions" id="ringActions">
+    <button class="answer" id="answerBtn"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>Répondre</button>
+    <button class="later" id="laterBtn">Plus tard</button>
+  </div>
+  <div class="call-actions" id="errActions" hidden>
+    <p class="err" id="errText"></p>
+    <button class="answer" id="retryBtn">Réessayer</button>
+    <a class="btn ghost" id="errWa" target="_blank" rel="noopener" style="width:100%">Écrire sur WhatsApp</a>
+    <button class="later" id="errClose">Fermer</button>
+  </div>
+  <div class="incall-btns" id="inCallActions" hidden>
+    <button class="cbtn" id="muteBtn"><i><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></i><span id="muteLbl">Couper le micro</span></button>
+    <button class="cbtn" id="minBtn"><i><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></i><span>Voir les modèles</span></button>
+    <button class="cbtn hang" id="hangBtn"><i><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 9c-1.6 0-3.2.3-4.6.7v3.1c0 .4-.2.7-.6.9-1 .5-1.9 1.1-2.7 1.8-.2.2-.4.3-.7.3-.3 0-.5-.1-.7-.3L.3 13.1A1 1 0 0 1 0 12.4c0-.3.1-.5.3-.7C3.4 8.8 7.5 7 12 7s8.6 1.8 11.7 4.7c.2.2.3.4.3.7 0 .3-.1.5-.3.7l-2.5 2.4c-.2.2-.4.3-.7.3-.3 0-.5-.1-.7-.3-.8-.7-1.7-1.3-2.7-1.8-.3-.2-.6-.5-.6-.9V9.7C15.2 9.3 13.6 9 12 9z"/></svg></i><span>Raccrocher</span></button>
+  </div>
+</div>
+<button class="bubble" id="bubble" hidden aria-label="Revenir à l'appel avec Grâce"><span class="orb pulse"></span><span>Grâce · en ligne</span></button>
+
+</div>
+<div id="adminRoot">
+<header><div class="wrap"><div class="hd">
+  <span class="logo">équinoxe<span>.</span> <small style="font-family:var(--body);font-style:normal;font-size:12px;color:var(--muted)">Gestion</small></span>
+  <div class="row" id="topActions" hidden>
+    <a class="btn ghost" href="./" target="_blank" rel="noopener" style="height:34px;padding:0 10px;font-size:13px">Voir la vitrine</a>
+    <button class="btn ghost" id="logout" style="height:34px;padding:0 10px;font-size:13px">Sortir</button>
+  </div>
+</div></div></header>
+<main><div class="wrap" id="app" style="display:flex;flex-direction:column;gap:14px"><div class="loading">Chargement…</div></div></main>
+</div>
+<script type="module">
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2.45.4";
+// Configuration publique du site Équinoxe Services.
+// Ces clés sont faites pour être publiques : la sécurité est assurée par les règles de la base (RLS).
+const SUPABASE_URL = "https://xxfzvowptsfpzrlbwvkq.supabase.co";
+const SUPABASE_KEY = "sb_publishable_pd8Pc_44u0_phAeSS-posg_f95-Jceg";
+
+const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
+
+const DEFAULT_SETTINGS = {
+  whatsapp_number: "+243 836 963 894",
+  slogan: "L'art de créer des souvenirs.",
+  elevenlabs_agent_id: "agent_8001m6w4h06sfzs9nyhabttvx0rw",
+};
+
+const waDigits = (n) => (n || "").replace(/\D/g, "");
+const waLink = (number, text) =>
+  "https://wa.me/" + waDigits(number) + "?text=" + encodeURIComponent(text);
+const esc = (s) =>
+  String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+
+const IS_ADMIN = location.hash === "#admin";
+window.addEventListener("hashchange", () => { if ((location.hash === "#admin") !== IS_ADMIN) location.reload(); });
+document.getElementById(IS_ADMIN ? "vitrineRoot" : "adminRoot").remove();
+document.title = IS_ADMIN ? "Gestion · Équinoxe Services" : "Équinoxe Services";
+if (IS_ADMIN) { (function runAdmin(){
+
+const app = document.getElementById("app");
+const $ = (id) => document.getElementById(id);
+let session = null;
+let sections = [];
+let items = [];
+let settings = { ...DEFAULT_SETTINGS };
+let view = { name: "home" }; // home | section | item | settings
+
+const I = {
+  up: '<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 10l5-5 5 5"/></svg>',
+  down: '<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 6l5 5 5-5"/></svg>',
+  edit: '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 20h4L19 9l-4-4L4 16v4z"/></svg>',
+  del: '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"/></svg>',
+  eye: '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>',
+  hide: '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 3l18 18M10.6 6.1A9.8 9.8 0 0 1 12 6c6.5 0 10 6 10 6a17 17 0 0 1-3.2 3.9M6.6 6.6A17 17 0 0 0 2 12s3.5 7 10 7a9.6 9.6 0 0 0 5.4-1.6"/></svg>',
+  back: '<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M10 3L5 8l5 5"/></svg>',
+};
+
+function toast(msg) {
+  const t = document.createElement("div"); t.className = "toast"; t.textContent = msg;
+  document.body.appendChild(t); setTimeout(() => t.remove(), 2600);
+}
+const fail = (e, what) => { console.error(e); toast(`${what} : échec. ${e?.message || "Vérifiez votre connexion."}`); };
+
+/* ---------- Connexion ---------- */
+function loginView(mode = "in", note = "") {
+  $("topActions").hidden = true;
+  app.innerHTML = `
+  <div class="panel">
+    <b style="font-size:17px;font-weight:500">${mode === "in" ? "Connexion à la gestion" : "Créer le compte administrateur"}</b>
+    <p class="hint">${mode === "in" ? "Entrez l'adresse e-mail et le mot de passe de votre compte." : "Le tout premier compte créé devient administrateur. Les comptes créés ensuite n'auront aucun droit."}</p>
+    ${note ? `<p class="hint" style="color:var(--gold-soft)">${esc(note)}</p>` : ""}
+    <form id="authForm" style="display:flex;flex-direction:column;gap:10px">
+      <label class="field">Adresse e-mail<input id="email" type="email" autocomplete="email" required></label>
+      <label class="field">Mot de passe<input id="pwd" type="password" autocomplete="${mode === "in" ? "current-password" : "new-password"}" minlength="8" required></label>
+      <button class="btn full" type="submit" id="authBtn">${mode === "in" ? "Se connecter" : "Créer le compte"}</button>
+    </form>
+    <button class="btn ghost" id="switchMode">${mode === "in" ? "Première utilisation ? Créer le compte administrateur" : "J'ai déjà un compte"}</button>
+  </div>`;
+  $("switchMode").onclick = () => loginView(mode === "in" ? "up" : "in");
+  $("authForm").onsubmit = async (e) => {
+    e.preventDefault();
+    const email = $("email").value.trim(), password = $("pwd").value;
+    $("authBtn").disabled = true;
+    if (mode === "in") {
+      const { error } = await supabase.auth.signInWithPassword({ email, password });
+      $("authBtn").disabled = false;
+      if (error) return loginView("in", error.message.includes("confirm") ? "Confirmez d'abord votre adresse avec le lien reçu par e-mail." : "E-mail ou mot de passe incorrect.");
+    } else {
+      const { data, error } = await supabase.auth.signUp({ email, password, options: { emailRedirectTo: location.origin + "/#admin" } });
+      $("authBtn").disabled = false;
+      if (error) return loginView("up", "Création impossible : " + error.message);
+      if (!data.session) return loginView("in", "Compte créé. Ouvrez le lien de confirmation reçu par e-mail, puis connectez-vous ici.");
+    }
+  };
+}
+
+async function isAdmin() {
+  const { data } = await supabase.from("user_roles").select("role").eq("user_id", session.user.id).eq("role", "admin").maybeSingle();
+  return !!data;
+}
+
+/* ---------- Données ---------- */
+async function loadAll() {
+  const [s, i, st] = await Promise.all([
+    supabase.from("sections").select("*").order("position"),
+    supabase.from("items").select("*").order("position"),
+    supabase.from("settings").select("*").eq("id", 1).maybeSingle(),
+  ]);
+  if (s.error || i.error) throw s.error || i.error;
+  sections = s.data || []; items = i.data || []; if (st.data) settings = st.data;
+}
+const itemsOf = (sid) => items.filter((x) => x.section_id === sid).sort((a, b) => a.position - b.position);
+
+async function swap(table, list, idx, dir) {
+  const a = list[idx], b = list[idx + dir]; if (!a || !b) return;
+  const pa = a.position, pb = b.position === pa ? pa + dir : b.position;
+  const r1 = await supabase.from(table).update({ position: pb }).eq("id", a.id);
+  const r2 = await supabase.from(table).update({ position: pa }).eq("id", b.id);
+  if (r1.error || r2.error) return fail(r1.error || r2.error, "Déplacement");
+  await refresh();
+}
+
+async function refresh() { try { await loadAll(); } catch (e) { return fail(e, "Chargement"); } render(); }
+
+/* ---------- Envoi de fichiers (avec progression) ---------- */
+function uploadFile(file, onProgress) {
+  return new Promise((resolve, reject) => {
+    const ext = (file.name.split(".").pop() || "bin").toLowerCase().replace(/[^a-z0-9]/g, "");
+    const path = `${Date.now()}-${Math.random().toString(36).slice(2, 8)}.${ext}`;
+    const xhr = new XMLHttpRequest();
+    xhr.open("POST", `${SUPABASE_URL}/storage/v1/object/media/${path}`);
+    xhr.setRequestHeader("Authorization", "Bearer " + session.access_token);
+    xhr.setRequestHeader("apikey", SUPABASE_KEY);
+    xhr.setRequestHeader("x-upsert", "false");
+    xhr.setRequestHeader("Content-Type", file.type || "application/octet-stream");
+    xhr.upload.onprogress = (e) => e.lengthComputable && onProgress(e.loaded / e.total);
+    xhr.onload = () => xhr.status < 300 ? resolve(`${SUPABASE_URL}/storage/v1/object/public/media/${path}`)
+      : reject(new Error(xhr.status === 413 ? "Fichier trop lourd (50 Mo maximum)." : "Erreur " + xhr.status));
+    xhr.onerror = () => reject(new Error("Connexion perdue pendant l'envoi."));
+    xhr.send(file);
+  });
+}
+async function removeStored(url) {
+  const pre = `${SUPABASE_URL}/storage/v1/object/public/media/`;
+  if (url && url.startsWith(pre)) await supabase.storage.from("media").remove([url.slice(pre.length)]);
+}
+
+/* ---------- Vues ---------- */
+function render() {
+  $("topActions").hidden = false;
+  if (view.name === "section") return sectionView();
+  if (view.name === "item") return itemView();
+  if (view.name === "settings") return settingsView();
+  homeView();
+}
+const go = (v) => { view = v; render(); window.scrollTo(0, 0); };
+
+function homeView() {
+  const site = location.origin + "/";
+  app.innerHTML = `
+  <div class="panel">
+    <b style="font-weight:500">Lien de la vitrine à envoyer aux clients</b>
+    <div class="row"><code style="flex:1;font-size:13px;color:var(--gold-soft);word-break:break-all;user-select:all" id="siteUrl">${esc(site)}</code><button class="btn out" id="copySite" style="height:36px">Copier</button></div>
+  </div>
+  <div class="panel">
+    <div class="row" style="justify-content:space-between"><b style="font-weight:500">Rubriques</b><button class="btn full" id="addSec" style="height:36px">+ Ajouter</button></div>
+    <div id="newSec" hidden style="display:flex;flex-direction:column;gap:8px">
+      <label class="field">Nom de la rubrique (onglet)<input id="secName" placeholder="Ex. Décoration"></label>
+      <div class="row"><button class="btn full" id="secCreate" style="flex:1">Créer</button><button class="btn ghost" id="secCancel">Annuler</button></div>
+    </div>
+    ${sections.map((s, i) => `<div class="sec">
+      <div class="nm" data-open="${s.id}" style="cursor:pointer"><b>${esc(s.name)}</b><small>${itemsOf(s.id).length} élément(s)${s.visible ? "" : " · masquée"}</small></div>
+      <button class="mini" data-up="${i}" aria-label="Monter" ${i ? "" : "disabled"}>${I.up}</button>
+      <button class="mini" data-down="${i}" aria-label="Descendre" ${i < sections.length - 1 ? "" : "disabled"}>${I.down}</button>
+      <button class="mini" data-open="${s.id}" aria-label="Modifier">${I.edit}</button>
+    </div>`).join("")}
+  </div>
+  <button class="btn ghost" id="toSettings">Réglages : WhatsApp, slogan, assistante</button>`;
+  $("copySite").onclick = () => navigator.clipboard?.writeText(site).then(() => toast("Lien copié")).catch(() => toast("Sélectionnez le lien pour le copier"));
+  $("addSec").onclick = () => { $("newSec").hidden = false; $("secName").focus(); };
+  $("secCancel").onclick = () => $("newSec").hidden = true;
+  $("secCreate").onclick = async () => {
+    const name = $("secName").value.trim(); if (!name) return toast("Donnez un nom à la rubrique");
+    const pos = Math.max(0, ...sections.map((s) => s.position)) + 1;
+    const { error } = await supabase.from("sections").insert({ name, title: name, position: pos });
+    if (error) return fail(error, "Création"); toast("Rubrique créée"); refresh();
+  };
+  app.querySelectorAll("[data-open]").forEach((b) => b.onclick = () => go({ name: "section", id: b.dataset.open }));
+  app.querySelectorAll("[data-up]").forEach((b) => b.onclick = () => swap("sections", sections, +b.dataset.up, -1));
+  app.querySelectorAll("[data-down]").forEach((b) => b.onclick = () => swap("sections", sections, +b.dataset.down, 1));
+  $("toSettings").onclick = () => go({ name: "settings" });
+}
+
+function sectionView() {
+  const s = sections.find((x) => x.id === view.id); if (!s) return go({ name: "home" });
+  const list = itemsOf(s.id);
+  app.innerHTML = `
+  <button class="btn ghost" id="back" style="align-self:flex-start;height:34px">${I.back} Rubriques</button>
+  <div class="panel">
+    <label class="field">Nom de l'onglet<input id="sName" value="${esc(s.name)}"></label>
+    <label class="field">Titre affiché aux clients<textarea id="sTitle" rows="2">${esc(s.title)}</textarea></label>
+    <label class="switch"><input type="checkbox" id="sVisible" ${s.visible ? "checked" : ""}> Visible sur la vitrine</label>
+    <button class="btn full" id="sSave">Enregistrer</button>
+  </div>
+  <div class="panel">
+    <div class="row" style="justify-content:space-between"><b style="font-weight:500">Photos, vidéos et modèles</b><button class="btn full" id="addItem" style="height:36px">+ Ajouter</button></div>
+    ${list.length ? "" : '<p class="hint">Aucun élément. Appuyez sur « + Ajouter » pour mettre une photo ou une vidéo.</p>'}
+    ${list.map((it, i) => {
+      const th = it.media_type === "video" ? it.poster_url : it.media_url;
+      return `<div class="sec">
+        ${th ? `<img class="thumb" src="${esc(th)}" alt="">` : '<span class="thumb"></span>'}
+        <div class="nm" data-edit="${it.id}" style="cursor:pointer"><b>${esc(it.name)}</b><small>${it.media_type === "video" ? "Vidéo" : "Photo"}${it.link_url ? " · lien" : ""}${it.visible ? "" : " · masqué"}</small></div>
+        <button class="mini" data-up="${i}" aria-label="Monter" ${i ? "" : "disabled"}>${I.up}</button>
+        <button class="mini" data-down="${i}" aria-label="Descendre" ${i < list.length - 1 ? "" : "disabled"}>${I.down}</button>
+        <button class="mini" data-edit="${it.id}" aria-label="Modifier">${I.edit}</button>
+      </div>`; }).join("")}
+  </div>
+  <div class="panel">
+    <button class="btn danger" id="sDel">Supprimer cette rubrique</button>
+    <div class="confirm" id="sDelBox" hidden>Supprimer « ${esc(s.name)} » et ses ${list.length} élément(s) ? Cette action est définitive.
+      <div class="row"><button class="btn danger" id="sDelYes" style="flex:1">Oui, supprimer</button><button class="btn ghost" id="sDelNo">Annuler</button></div></div>
+  </div>`;
+  $("back").onclick = () => go({ name: "home" });
+  $("sSave").onclick = async () => {
+    const { error } = await supabase.from("sections").update({ name: $("sName").value.trim() || s.name, title: $("sTitle").value.trim(), visible: $("sVisible").checked }).eq("id", s.id);
+    if (error) return fail(error, "Enregistrement"); toast("Enregistré"); refresh();
+  };
+  $("addItem").onclick = () => go({ name: "item", sectionId: s.id, id: null });
+  app.querySelectorAll("[data-edit]").forEach((b) => b.onclick = () => go({ name: "item", sectionId: s.id, id: b.dataset.edit }));
+  app.querySelectorAll("[data-up]").forEach((b) => b.onclick = () => swap("items", list, +b.dataset.up, -1));
+  app.querySelectorAll("[data-down]").forEach((b) => b.onclick = () => swap("items", list, +b.dataset.down, 1));
+  $("sDel").onclick = () => $("sDelBox").hidden = false;
+  $("sDelNo").onclick = () => $("sDelBox").hidden = true;
+  $("sDelYes").onclick = async () => {
+    for (const it of list) { await removeStored(it.media_url); await removeStored(it.poster_url); }
+    const { error } = await supabase.from("sections").delete().eq("id", s.id);
+    if (error) return fail(error, "Suppression"); toast("Rubrique supprimée"); view = { name: "home" }; refresh();
+  };
+}
+
+function itemView() {
+  const it = view.id ? items.find((x) => x.id === view.id) : null;
+  const sec = sections.find((x) => x.id === view.sectionId);
+  let media = { type: it?.media_type || "image", url: it?.media_url || "", poster: it?.poster_url || "" };
+  app.innerHTML = `
+  <button class="btn ghost" id="back" style="align-self:flex-start;height:34px">${I.back} ${esc(sec?.name || "Retour")}</button>
+  <div class="panel">
+    <b style="font-weight:500">${it ? "Modifier" : "Ajouter"} un élément</b>
+    <label class="field">Nom (ex. Soirée élégante, Photo 1)<input id="iName" value="${esc(it?.name || "")}"></label>
+    <div class="field">Photo ou vidéo
+      <div id="mPrev"></div>
+      <input type="file" id="iFile" accept="image/*,video/*">
+      <div class="bar" id="bar" hidden><i id="barFill"></i></div>
+      <p class="hint">Photos JPG ou PNG. Vidéos MP4 de préférence, 50 Mo maximum.</p>
+    </div>
+    <div class="field" id="posterBox" hidden>Image de couverture de la vidéo (facultatif)
+      <input type="file" id="iPoster" accept="image/*">
+    </div>
+    <label class="field">Lien à ouvrir (facultatif, ex. une vraie invitation digitale)<input id="iLink" type="url" placeholder="https://…" value="${esc(it?.link_url || "")}"></label>
+    <label class="switch"><input type="checkbox" id="iVisible" ${it?.visible === false ? "" : "checked"}> Visible sur la vitrine</label>
+    <button class="btn full" id="iSave">Enregistrer</button>
+  </div>
+  ${it ? `<div class="panel"><button class="btn danger" id="iDel">Supprimer cet élément</button>
+    <div class="confirm" id="iDelBox" hidden>Supprimer « ${esc(it.name)} » ? Cette action est définitive.
+    <div class="row"><button class="btn danger" id="iDelYes" style="flex:1">Oui, supprimer</button><button class="btn ghost" id="iDelNo">Annuler</button></div></div></div>` : ""}`;
+  const showPrev = () => {
+    $("mPrev").innerHTML = media.url
+      ? (media.type === "video" ? `<video class="prev" src="${esc(media.url)}" ${media.poster ? `poster="${esc(media.poster)}"` : ""} controls playsinline preload="metadata"></video>`
+                                : `<img class="prev" src="${esc(media.url)}" alt="">`)
+      : '<p class="hint">Aucun fichier pour le moment.</p>';
+    $("posterBox").hidden = media.type !== "video";
+  };
+  showPrev();
+  const busy = (on) => { $("iSave").disabled = on; $("bar").hidden = !on; if (!on) $("barFill").style.width = "0"; };
+  $("iFile").onchange = async () => {
+    const f = $("iFile").files[0]; if (!f) return;
+    if (f.size > 50 * 1024 * 1024) { $("iFile").value = ""; return toast("Fichier trop lourd : 50 Mo maximum."); }
+    busy(true);
+    try {
+      const url = await uploadFile(f, (p) => $("barFill").style.width = Math.round(p * 100) + "%");
+      media = { type: f.type.startsWith("video") ? "video" : "image", url, poster: f.type.startsWith("video") ? media.poster : "" };
+      if (!$("iName").value.trim()) $("iName").value = f.name.replace(/\.[^.]+$/, "");
+      showPrev(); toast("Fichier envoyé");
+    } catch (e) { fail(e, "Envoi"); }
+    busy(false);
+  };
+  $("iPoster").onchange = async () => {
+    const f = $("iPoster").files[0]; if (!f) return;
+    busy(true);
+    try { media.poster = await uploadFile(f, (p) => $("barFill").style.width = Math.round(p * 100) + "%"); showPrev(); toast("Couverture envoyée"); }
+    catch (e) { fail(e, "Envoi"); }
+    busy(false);
+  };
+  $("back").onclick = () => go({ name: "section", id: view.sectionId });
+  $("iSave").onclick = async () => {
+    const name = $("iName").value.trim(); if (!name) return toast("Donnez un nom à l'élément");
+    const link = $("iLink").value.trim();
+    if (link && !/^https?:\/\//i.test(link)) return toast("Le lien doit commencer par https://");
+    const row = { name, media_type: media.type, media_url: media.url || null, poster_url: media.type === "video" ? (media.poster || null) : null, link_url: link || null, visible: $("iVisible").checked };
+    let error;
+    if (it) {
+      ({ error } = await supabase.from("items").update(row).eq("id", it.id));
+      if (!error && it.media_url !== row.media_url) await removeStored(it.media_url);
+      if (!error && it.poster_url && it.poster_url !== row.poster_url) await removeStored(it.poster_url);
+    } else {
+      const pos = Math.max(0, ...itemsOf(view.sectionId).map((x) => x.position)) + 1;
+      ({ error } = await supabase.from("items").insert({ ...row, section_id: view.sectionId, position: pos }));
+    }
+    if (error) return fail(error, "Enregistrement");
+    toast("Enregistré"); view = { name: "section", id: view.sectionId }; refresh();
+  };
+  if (it) {
+    $("iDel").onclick = () => $("iDelBox").hidden = false;
+    $("iDelNo").onclick = () => $("iDelBox").hidden = true;
+    $("iDelYes").onclick = async () => {
+      const { error } = await supabase.from("items").delete().eq("id", it.id);
+      if (error) return fail(error, "Suppression");
+      await removeStored(it.media_url); await removeStored(it.poster_url);
+      toast("Élément supprimé"); view = { name: "section", id: view.sectionId }; refresh();
+    };
+  }
+}
+
+function settingsView() {
+  app.innerHTML = `
+  <button class="btn ghost" id="back" style="align-self:flex-start;height:34px">${I.back} Rubriques</button>
+  <div class="panel">
+    <b style="font-weight:500">Réglages</b>
+    <label class="field">Numéro WhatsApp<input id="wa" value="${esc(settings.whatsapp_number)}" inputmode="tel"></label>
+    <label class="field">Slogan<input id="slogan" value="${esc(settings.slogan)}"></label>
+    <label class="field">Identifiant de l'assistante ElevenLabs<input id="agent" value="${esc(settings.elevenlabs_agent_id)}"></label>
+    <p class="hint">Grâce utilise cet identifiant. Ne le changez que si vous créez une autre assistante sur ElevenLabs.</p>
+    <button class="btn full" id="save">Enregistrer</button>
+  </div>`;
+  $("back").onclick = () => go({ name: "home" });
+  $("save").onclick = async () => {
+    const row = { whatsapp_number: $("wa").value.trim(), slogan: $("slogan").value.trim(), elevenlabs_agent_id: $("agent").value.trim(), updated_at: new Date().toISOString() };
+    if (!row.whatsapp_number || !row.elevenlabs_agent_id) return toast("Le numéro et l'identifiant sont obligatoires");
+    const { error } = await supabase.from("settings").update(row).eq("id", 1);
+    if (error) return fail(error, "Enregistrement"); toast("Réglages enregistrés"); refresh();
+  };
+}
+
+/* ---------- Démarrage ---------- */
+async function boot() {
+  const { data } = await supabase.auth.getSession();
+  session = data.session;
+  if (!session) return loginView();
+  if (!(await isAdmin())) {
+    $("topActions").hidden = false;
+    app.innerHTML = '<div class="panel"><b style="font-weight:500">Accès refusé</b><p class="hint">Ce compte n\'a pas les droits d\'administration. Connectez-vous avec le compte administrateur.</p></div>';
+    return;
+  }
+  refresh();
+}
+$("logout").onclick = async () => { await supabase.auth.signOut(); };
+supabase.auth.onAuthStateChange((evt, s) => {
+  if (evt === "SIGNED_IN" || evt === "SIGNED_OUT") { session = s; view = { name: "home" }; boot(); }
+});
+boot();
+
+})(); } else { (function runVitrine(){
+
+const $ = (id) => document.getElementById(id);
+let settings = { ...DEFAULT_SETTINGS };
+let sections = [];
+let cur = null; // rubrique affichée
+
+const ICON_EYE_S = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>';
+const ICON_EYE = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>';
+const ICON_DL = '<svg width="17" height="19" viewBox="0 0 22 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M11 3v13M5 11l6 6 6-6M3 22h16"/></svg>';
+const CHEV_R = '<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 3l5 5-5 5"/></svg>';
+const CHEV_L = '<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M10 3L5 8l5 5"/></svg>';
+
+const thumbOf = (it) => it.media_type === "video" ? (it.poster_url || "") : (it.media_url || "");
+const orderMsg = (it) => `Bonjour ÉQUINOXE EVENTS, je suis intéressé(e) par le modèle « ${it.name} » (${cur.name}).`;
+const infoMsg = () => `Bonjour ÉQUINOXE EVENTS, je souhaite des informations sur vos ${cur ? cur.name.toLowerCase() : "services"}.`;
+
+/* ---------- Données ---------- */
+async function load() {
+  const [st, sec, its] = await Promise.all([
+    supabase.from("settings").select("*").eq("id", 1).maybeSingle(),
+    supabase.from("sections").select("*").eq("visible", true).order("position"),
+    supabase.from("items").select("*").eq("visible", true).order("position"),
+  ]);
+  if (st.data) settings = { ...settings, ...st.data };
+  if (sec.error || its.error) {
+    $("card").innerHTML = '<div class="loading">Impossible de charger les modèles. Vérifiez votre connexion puis rechargez la page.</div>';
+    return;
+  }
+  sections = (sec.data || []).map((s) => ({ ...s, items: (its.data || []).filter((i) => i.section_id === s.id) }));
+  $("num").textContent = settings.whatsapp_number;
+  $("sloganLine").textContent = "ÉQUINOXE EVENTS · " + settings.slogan;
+  let saved = null; try { saved = localStorage.getItem("eq-tab"); } catch (e) {}
+  cur = sections.find((s) => s.id === saved) || sections[0] || null;
+  render();
+}
+
+/* ---------- Rendu ---------- */
+function renderTabs() {
+  $("tabs").innerHTML = sections.map((s) =>
+    `<button class="tab" role="tab" aria-selected="${s === cur}" data-id="${s.id}">${esc(s.name)}</button>`).join("");
+  $("tabs").querySelectorAll(".tab").forEach((b) => b.onclick = () => select(b.dataset.id));
+  const on = $("tabs").querySelector('[aria-selected="true"]');
+  on?.scrollIntoView({ inline: "nearest", block: "nearest" });
+}
+
+function select(id) {
+  cur = sections.find((s) => s.id === id) || cur;
+  try { localStorage.setItem("eq-tab", cur.id); } catch (e) {}
+  render();
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+function slideHtml(it, i) {
+  let media;
+  if (it.media_type === "video" && it.media_url) {
+    media = `<video src="${esc(it.media_url)}" ${it.poster_url ? `poster="${esc(it.poster_url)}"` : ""} controls playsinline preload="none"></video>`;
+  } else if (it.media_url) {
+    media = `<img src="${esc(it.media_url)}" alt="${esc(it.name)}" ${i ? 'loading="lazy"' : ""}>`;
+  } else {
+    media = `<div class="ph">${esc(it.name)}</div>`;
+  }
+  const pill = it.link_url ? `<a class="pill" href="${esc(it.link_url)}" target="_blank" rel="noopener">${ICON_EYE_S}Ouvrir</a>` : "";
+  return `<div class="slide">${media}${pill}</div>`;
+}
+
+function render() {
+  renderTabs();
+  const card = $("card");
+  if (!cur) { card.innerHTML = '<div class="loading">Aucune rubrique pour le moment.</div>'; return; }
+  const items = cur.items;
+  let html = "";
+  if (items.length) {
+    html += `<div class="car"><div class="track" id="track">${items.map(slideHtml).join("")}</div>
+      <button class="arr prev" id="prev" aria-label="Modèle précédent" hidden>${CHEV_L}</button>
+      <button class="arr next" id="next" aria-label="Modèle suivant" ${items.length < 2 ? "hidden" : ""}>${CHEV_R}</button>
+      <div class="cap"><b id="capName">${esc(items[0].name)}</b><span class="dots" id="dots">${items.length > 1 ? items.map((_, i) => `<i class="${i ? "" : "on"}"></i>`).join("") : ""}</span></div></div>`;
+  }
+  html += `<h1>${esc(cur.title || cur.name)}</h1>`;
+  if (items.length) {
+    html += `<div class="list">${items.map((it, i) => `<div class="item">
+      ${thumbOf(it) ? `<img class="thumb" src="${esc(thumbOf(it))}" alt="" loading="lazy">` : '<span class="thumb"></span>'}
+      <div class="name">${esc(it.name)}</div>
+      ${it.link_url ? `<a class="ico" aria-label="Voir ${esc(it.name)}" target="_blank" rel="noopener" href="${esc(it.link_url)}">${ICON_EYE}</a>`
+                    : `<button class="ico" aria-label="Voir ${esc(it.name)}" data-i="${i}">${ICON_EYE}</button>`}
+      <a class="ico go" aria-label="Commander ${esc(it.name)}" target="_blank" rel="noopener" href="${waLink(settings.whatsapp_number, orderMsg(it))}">${ICON_DL}</a>
+    </div>`).join("")}</div>`;
+  }
+  html += `<div class="btns">
+    ${items.length ? `<button class="btn out" id="openGrid">${ICON_EYE}Ouvrir</button>` : ""}
+    <a class="btn full" target="_blank" rel="noopener" href="${waLink(settings.whatsapp_number, infoMsg())}">Commander sur WhatsApp</a></div>`;
+  card.innerHTML = html;
+  card.querySelectorAll("button.ico").forEach((b) => b.onclick = () => showSlide(+b.dataset.i));
+  $("openGrid") && ($("openGrid").onclick = openGrid);
+  wireCarousel();
+}
+
+function wireCarousel() {
+  const tr = $("track"); if (!tr) return;
+  const n = cur.items.length;
+  const idx = () => Math.round(tr.scrollLeft / tr.clientWidth);
+  $("next").onclick = () => tr.scrollBy({ left: tr.clientWidth, behavior: "smooth" });
+  $("prev").onclick = () => tr.scrollBy({ left: -tr.clientWidth, behavior: "smooth" });
+  const upd = () => {
+    const i = Math.min(idx(), n - 1);
+    $("prev").hidden = i <= 0; $("next").hidden = i >= n - 1;
+    $("capName").textContent = cur.items[i].name;
+    $("dots").querySelectorAll("i").forEach((d, k) => d.className = k === i ? "on" : "");
+    tr.querySelectorAll("video").forEach((v, k) => { if (k !== i && !v.paused) v.pause(); });
+  };
+  tr.addEventListener("scroll", () => requestAnimationFrame(upd), { passive: true });
+  tr.querySelectorAll("video").forEach((v) => v.addEventListener("play", () =>
+    tr.querySelectorAll("video").forEach((o) => { if (o !== v) o.pause(); })));
+}
+
+function showSlide(i) {
+  closeScreens();
+  const tr = $("track"); if (!tr) return;
+  $("card").scrollIntoView({ behavior: "smooth", block: "start" });
+  const slide = tr.children[i];
+  tr.scrollTo({ left: i * tr.clientWidth, behavior: "smooth" });
+  const v = slide?.querySelector("video");
+  if (v) setTimeout(() => v.play().catch(() => {}), 450);
+}
+
+function openGrid() {
+  $("gTitle").textContent = cur.name;
+  $("grid").innerHTML = cur.items.map((it, i) => {
+    const img = thumbOf(it) ? `<img src="${esc(thumbOf(it))}" alt="" loading="lazy">` : `<div class="ph" style="font-size:18px">${esc(it.name)}</div>`;
+    return it.link_url
+      ? `<a class="tile" href="${esc(it.link_url)}" target="_blank" rel="noopener">${img}<span>${esc(it.name)}</span></a>`
+      : `<button class="tile" data-i="${i}">${img}<span>${esc(it.name)}</span></button>`;
+  }).join("");
+  $("grid").querySelectorAll("button.tile").forEach((b) => b.onclick = () => showSlide(+b.dataset.i));
+  $("gridView").hidden = false;
+}
+
+function openMenu() {
+  $("menulist").innerHTML = sections.map((s) =>
+    `<button class="mi${s === cur ? " on" : ""}" data-id="${s.id}"><span>${esc(s.name)}</span>${CHEV_R}</button>`).join("");
+  $("menulist").querySelectorAll(".mi").forEach((b) => b.onclick = () => { closeScreens(); select(b.dataset.id); });
+  $("menuWa").href = waLink(settings.whatsapp_number, "Bonjour ÉQUINOXE EVENTS, je souhaite des informations sur vos services.");
+  $("menu").hidden = false;
+}
+function closeScreens() { $("menu").hidden = true; $("gridView").hidden = true; }
+
+$("burger").onclick = openMenu;
+$("menuClose").onclick = closeScreens;
+$("gridClose").onclick = closeScreens;
+$("copyBtn").onclick = () => {
+  navigator.clipboard?.writeText(settings.whatsapp_number)
+    .then(() => $("copyBtn").textContent = "Numéro copié")
+    .catch(() => { const r = document.createRange(); r.selectNodeContents($("num")); const s = getSelection(); s.removeAllRanges(); s.addRange(r); });
+};
+document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeScreens(); });
+
+/* ---------- Grâce : appel vocal dans la page ---------- */
+let conv = null, state = "idle", muted = false, t0 = 0, tick = null;
+
+function setView(v) {
+  state = v;
+  $("call").hidden = v === "idle" || v === "minimized";
+  $("bubble").hidden = v !== "minimized";
+  $("ringActions").hidden = v !== "ringing";
+  $("errActions").hidden = v !== "error";
+  $("inCallActions").hidden = !(v === "connecting" || v === "incall");
+  $("timer").hidden = v !== "incall";
+  $("callKicker").textContent = v === "ringing" ? "Appel entrant" : v === "error" ? "Appel interrompu" : "En ligne";
+  if (v === "ringing") $("callStatus").textContent = "Équinoxe Events vous appelle…";
+  if (v === "connecting") $("callStatus").textContent = "Connexion…";
+  document.body.style.overflow = $("call").hidden ? "" : "hidden";
+}
+
+function ring() { if (state === "idle") setView("ringing"); }
+
+async function answer() {
+  if (state === "connecting" || state === "incall") return;
+  setView("connecting");
+  try {
+    // Le téléphone demande l'accès au micro (une seule fois par site).
+    const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+    stream.getTracks().forEach((t) => t.stop());
+  } catch (e) {
+    return fail("Pour parler avec Grâce, autorisez le micro de votre téléphone, puis appuyez sur « Réessayer ».");
+  }
+  try {
+    // Bibliothèque officielle ElevenLabs, chargée seulement au moment de l'appel.
+    const { Conversation } = await import("https://esm.sh/@elevenlabs/client");
+    conv = await Conversation.startSession({
+      agentId: settings.elevenlabs_agent_id,
+      onConnect: () => {
+        setView("incall"); t0 = Date.now();
+        clearInterval(tick);
+        tick = setInterval(() => {
+          const s = Math.floor((Date.now() - t0) / 1000);
+          $("timer").textContent = String(Math.floor(s / 60)).padStart(2, "0") + ":" + String(s % 60).padStart(2, "0");
+        }, 1000);
+      },
+      onDisconnect: () => endUi(),
+      onError: () => fail("La communication avec Grâce a été coupée. Vérifiez votre connexion internet puis réessayez."),
+      onModeChange: ({ mode }) => {
+        const speaking = mode === "speaking";
+        $("bigorb").classList.toggle("speaking", speaking);
+        if (state === "incall") $("callStatus").textContent = speaking ? "Grâce vous parle…" : "Je vous écoute…";
+        $("bubble").querySelector("span:last-child").textContent = speaking ? "Grâce parle…" : "Grâce · en ligne";
+      },
+    });
+  } catch (e) {
+    fail("Grâce n'est pas joignable pour le moment. Réessayez dans un instant ou écrivez-nous sur WhatsApp.");
+  }
+}
+
+function fail(msg) {
+  try { conv?.endSession(); } catch (e) {}
+  conv = null; clearInterval(tick);
+  $("errText").textContent = msg;
+  $("errWa").href = waLink(settings.whatsapp_number, "Bonjour ÉQUINOXE EVENTS, je souhaite des informations sur vos services.");
+  setView("error");
+}
+
+function endUi() {
+  conv = null; clearInterval(tick);
+  $("bigorb").classList.remove("speaking");
+  muted = false; $("muteBtn").classList.remove("on"); $("muteLbl").textContent = "Couper le micro";
+  if (state !== "error") setView("idle");
+}
+
+async function hangUp() { const c = conv; conv = null; try { await c?.endSession(); } catch (e) {} endUi(); setView("idle"); }
+
+$("answerBtn").onclick = (e) => { e.stopPropagation(); answer(); };
+$("call").addEventListener("click", (e) => {
+  // Toucher n'importe où pendant la sonnerie = répondre
+  if (state === "ringing" && !e.target.closest("#laterBtn")) answer();
+});
+$("laterBtn").onclick = (e) => { e.stopPropagation(); setView("idle"); };
+$("retryBtn").onclick = () => answer();
+$("errClose").onclick = () => setView("idle");
+$("hangBtn").onclick = hangUp;
+$("minBtn").onclick = () => setView("minimized");
+$("bubble").onclick = () => setView(conv ? "incall" : "idle");
+$("muteBtn").onclick = () => {
+  if (!conv || typeof conv.setMicMuted !== "function") return;
+  muted = !muted; conv.setMicMuted(muted);
+  $("muteBtn").classList.toggle("on", muted);
+  $("muteLbl").textContent = muted ? "Réactiver le micro" : "Couper le micro";
+};
+const startCall = () => { closeScreens(); if (conv) setView("incall"); else { setView("ringing"); answer(); } };
+$("graceBtn").onclick = startCall;
+$("menuGrace").onclick = startCall;
+window.addEventListener("pagehide", () => { try { conv?.endSession(); } catch (e) {} });
+
+/* ---------- Démarrage ---------- */
+load();
+let rang = false; try { rang = sessionStorage.getItem("eq-rang") === "1"; } catch (e) {}
+if (!rang) {
+  setTimeout(() => { ring(); try { sessionStorage.setItem("eq-rang", "1"); } catch (e) {} }, 900);
+}
+
+})(); }
+
+</script>
+</body>
+</html>
